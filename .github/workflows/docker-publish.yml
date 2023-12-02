@@ -60,4 +60,3 @@ jobs:
           file: ./image-updater/source-code/Dockerfile
           push: true
           tags: ghcr.io/${{ steps.imagename.outputs.lowercase }}:${{ inputs.docker_tag }}
-
