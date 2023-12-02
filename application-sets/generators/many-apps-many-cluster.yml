@@ -4,16 +4,13 @@ metadata:
   name: cluster-git
 spec:
   generators:
-    # matrix 'parent' generator
     - matrix:
         generators:
-          # git generator, 'child' #1
           - git:
               repoURL: https://github.com/argoproj/argo-cd.git
               revision: HEAD
               directories:
                 - path: applicationset/examples/matrix/cluster-addons/*
-          # cluster generator, 'child' #2
           - clusters:
               selector:
                 matchLabels:
